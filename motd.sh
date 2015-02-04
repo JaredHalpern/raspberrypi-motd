@@ -78,17 +78,29 @@ borderBar=$(color $borderColor "┃")
 borderEmptyLine="$borderBar                                                                              $borderBar"
 
 # Header
+#header="$borderTopLine\n$borderEmptyLine\n"
+#header="$header$borderBar$(color $headerLeafColor "          .~~.   .~~.                                                         ")$borderBar\n"
+#header="$header$borderBar$(color $headerLeafColor "         '. \ ' ' / .'                                                        ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "          .~ .~~~..~.                      _                          _       ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "         : .~.'~'.~. :     ___ ___ ___ ___| |_ ___ ___ ___ _ _    ___|_|      ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "        ~ (   ) (   ) ~   |  _| .'|_ -| . | . | -_|  _|  _| | |  | . | |      ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "       ( : '~'.~.'~' : )  |_| |__,|___|  _|___|___|_| |_| |_  |  |  _|_|      ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "        ~ .~ (   ) ~. ~               |_|                 |___|  |_|          ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "         (  : '~' :  )                                                        ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "          '~ .~~~. ~'                                                         ")$borderBar\n"
+#header="$header$borderBar$(color $headerRaspberryColor "              '~'                                                             ")$borderBar"
+
 header="$borderTopLine\n$borderEmptyLine\n"
-header="$header$borderBar$(color $headerLeafColor "          .~~.   .~~.                                                         ")$borderBar\n"
-header="$header$borderBar$(color $headerLeafColor "         '. \ ' ' / .'                                                        ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "          .~ .~~~..~.                      _                          _       ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "         : .~.'~'.~. :     ___ ___ ___ ___| |_ ___ ___ ___ _ _    ___|_|      ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "        ~ (   ) (   ) ~   |  _| .'|_ -| . | . | -_|  _|  _| | |  | . | |      ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "       ( : '~'.~.'~' : )  |_| |__,|___|  _|___|___|_| |_| |_  |  |  _|_|      ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "        ~ .~ (   ) ~. ~               |_|                 |___|  |_|          ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "         (  : '~' :  )                                                        ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "          '~ .~~~. ~'                                                         ")$borderBar\n"
-header="$header$borderBar$(color $headerRaspberryColor "              '~'                                                             ")$borderBar"
+header="$header$borderBar$(color $headerLeafColor "    )                                     ")$borderBar\n"
+header="$header$borderBar$(color $headerLeafColor " ( /(           )                         ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor " )\()) (     ( /(       (   (      )  ")$borderBar\n" 
+header="$header$borderBar$(color $headerRaspberryColor "((_)\  )\ )  )\())  (   )(  )\  ( /(  ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor " _((_)(()/( ((_)\   )\ (()\((_) )(_)) ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor "| || | )(_))| |(_) ((_) ((_)(_)((_)_  ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor "| __ || || || '_ \/ _ \| '_|| |/ _` | ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor "|_||_| \_, ||_.__/\___/|_|  |_|\__,_| ")$borderBar\n"
+header="$header$borderBar$(color $headerRaspberryColor "       |__/                           
+
 
 me=$(whoami)
 
@@ -127,7 +139,7 @@ label3="$borderBar  $(color $statsLabelColor "Memory........:") $label3$borderBa
 label4="$(extend "$(df -h ~ | awk 'NR==2 { printf "Total: %sB, Used: %sB, Free: %sB",$2,$3,$4; }')")"
 label4="$borderBar  $(color $statsLabelColor "Home space....:") $label4$borderBar"
 
-label5="$(extend "$(/opt/vc/bin/vcgencmd measure_temp | cut -c "6-9")ºC")"
+label5="$(extend "$(/opt/vc/bin/vcgencmd measure_temp | cut -c "31-35")ºF")"
 label5="$borderBar  $(color $statsLabelColor "Temperature...:") $label5$borderBar"
 
 stats="$label1\n$label2\n$label3\n$label4\n$label5"
